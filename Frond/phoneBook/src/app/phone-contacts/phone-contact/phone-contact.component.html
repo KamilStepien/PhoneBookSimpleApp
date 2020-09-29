@@ -1,4 +1,5 @@
 <form [formGroup]="phoneContact">
+    <input hidden #id [ngModel]="service.phoneContact.id" formControlName="id" />
   <div class="form-row">
     <div class="col-md-6">
       <div class="form-group">
@@ -15,7 +16,7 @@
     <input placeholder="Phone Number" [(ngModel)]="service.phoneContact.phoneNumber"  class="form-control" type="number"   formControlName="phoneNumber" />
   </div>
   <div class="form-group">
-    <button class="btn btn-success btn-lg btn-block" (click)="addPhoneContact()"  type="submit" [disabled] = "phoneContact.invalid">
+    <button class="btn btn-success btn-lg btn-block" (click)="submit(id.value)"  type="submit" [disabled] = "phoneContact.invalid">
       Submit
     </button>
   </div>

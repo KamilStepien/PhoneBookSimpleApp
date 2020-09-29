@@ -23,6 +23,5 @@ export class PhoneContactListComponent implements OnInit {
   getPhoneContact(id:number)
   {
     this.service.getPhoneContact(id);
-    console.log(id);
   }
 }

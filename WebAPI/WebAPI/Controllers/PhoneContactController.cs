@@ -37,6 +37,31 @@ namespace WebAPI.Controllers
             return phoneContact;
                    
         }
+        [HttpPut("{id}")]
+        public async Task<ActionResult<PhoneContact>> PutPhoneContact(int id, PhoneContact newphoneContact)
+        {
+            if (id != newphoneContact.ID)
+            {
+                return BadRequest();
+            }
+
+            var phoneContact = await _applicationDbContext.PhoneContacts.FindAsync(id);
+
+            if(phoneContact == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                phoneContact.FirstName = newphoneContact.FirstName;
+                phoneContact.LastName = newphoneContact.LastName;
+                phoneContact.PhoneNumber = newphoneContact.PhoneNumber;
+
+                await _applicationDbContext.SaveChangesAsync();
+                return newphoneContact;
+            }
+
+        }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<PhoneContact>> DeletePhoneContact(int id)

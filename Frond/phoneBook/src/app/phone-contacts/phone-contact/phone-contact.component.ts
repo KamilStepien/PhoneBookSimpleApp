@@ -13,6 +13,7 @@ import { thistle } from 'color-name';
 export class PhoneContactComponent implements OnInit {
 
   phoneContact = new FormGroup({
+    id:new FormControl(''),
     firstName:new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
     phoneNumber: new FormControl('',[Validators.required])
@@ -23,12 +24,32 @@ export class PhoneContactComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addPhoneContact():void
+  submit(id:number):void
   {
-
-    this.service.addPhoneContact().subscribe(x => this.service.phoneContacts.push(x));
+    if(id.toString() == "")
+    {
+      this.AddContact();
+    }
+    else
+    {
+    this.EditContact(id)
+    }
     this.resetForm();
+
   }
+
+  AddContact()
+  {
+    this.service.addPhoneContact().subscribe(x => this.service.phoneContacts.push(x));
+  }
+  EditContact(id:number)
+  {
+    this.service.editPhoneContact(id).subscribe(x =>   this.service.refreshPhoneContacts());
+
+  }
+
+
+
 
   resetForm():void
   {

@@ -34,6 +34,11 @@ export class PhoneContactService {
     )
   }
 
+  editPhoneContact(id:number)
+  {
+    return this.http.put<PhoneContactModule>("http://localhost:62792/api/phoneContact/" + id,this.phoneContact);
+  }
+
   addPhoneContact()
   {
     this.phoneContact.id=0;
@@ -43,5 +48,10 @@ export class PhoneContactService {
   deletePhoneContact(id:number)
   {
     return this.http.delete<PhoneContactModule>("http://localhost:62792/api/phoneContact/"+id)
+  }
+
+  refreshPhoneContacts()
+  {
+    this.getPhoneContacts();
   }
 }
