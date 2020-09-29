@@ -19,14 +19,13 @@ export class PhoneContactComponent implements OnInit {
   }
   )
 
-  constructor(private service:PhoneContactService) { }
+  constructor(public service:PhoneContactService) {}
 
   ngOnInit(): void {
   }
   addPhoneContact():void
   {
-    this.service.phoneContact = this.phoneContact.value;
-    console.log(this.service.phoneContact );
+
     this.service.addPhoneContact().subscribe(x => this.service.phoneContacts.push(x));
     this.resetForm();
   }

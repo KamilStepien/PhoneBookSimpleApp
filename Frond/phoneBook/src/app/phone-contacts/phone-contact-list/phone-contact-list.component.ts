@@ -19,4 +19,10 @@ export class PhoneContactListComponent implements OnInit {
   {
     this.service.deletePhoneContact(id).subscribe(x => this.service.getPhoneContacts())
   }
+
+  getPhoneContact(id:number)
+  {
+    this.service.getPhoneContact(id);
+    console.log(id);
+  }
 }

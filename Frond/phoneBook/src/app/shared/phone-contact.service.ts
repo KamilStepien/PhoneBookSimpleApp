@@ -27,8 +27,16 @@ export class PhoneContactService {
     );
   }
 
+  getPhoneContact(id:number)
+  {
+    this.http.get<PhoneContactModule>("http://localhost:62792/api/phoneContact/" + id).subscribe(
+      result => this.phoneContact = result
+    )
+  }
+
   addPhoneContact()
   {
+    this.phoneContact.id=0;
     return this.http.post<PhoneContactModule>("http://localhost:62792/api/phoneContact",this.phoneContact)
   }
 

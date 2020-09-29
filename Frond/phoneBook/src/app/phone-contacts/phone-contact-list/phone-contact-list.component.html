@@ -6,9 +6,9 @@
     </thead>
     <tbody>
         <tr  scope="row" *ngFor="let phonecontact of service.phoneContacts">
-            <td>{{phonecontact.firstName}}</td>
-            <td>{{phonecontact.lastName}}</td>
-            <td>{{phonecontact.phoneNumber}}</td>
+            <td (click)="getPhoneContact(phonecontact.id)" >{{phonecontact.firstName}}</td>
+            <td (click)="getPhoneContact(phonecontact.id)">{{phonecontact.lastName}}</td>
+            <td (click)="getPhoneContact(phonecontact.id)">{{phonecontact.phoneNumber}}</td>
             <td><button type="button" (click)="deletePhoneContact(phonecontact.id)"   class="btn btn-danger">Delete</button>
             </td>
         </tr>
