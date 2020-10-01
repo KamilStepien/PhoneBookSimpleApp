@@ -8,14 +8,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent 
+export class AppComponent
 {
-    phoneContacts: PhoneContactModule [];
-
-
-  constructor( private http:HttpClient)
-  {
-    http.get<PhoneContactModule[]>("http://localhost:62792/api/phoneContact").subscribe(result => this.phoneContacts = result)
-  }
+    
 
 }

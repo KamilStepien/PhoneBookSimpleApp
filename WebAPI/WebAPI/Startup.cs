@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebAPI.Context;
-
+using WebAPI.Models;
 namespace WebAPI
 {
     public class Startup
@@ -27,7 +27,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(opition => opition.UseSqlServer(Configuration["Data:ConnectionString"]));
-
+            services.AddTransient<IWordService, OpenXMLWordService>();
             services.AddControllers();
 
             services.AddCors();

@@ -8,6 +8,7 @@ import { PhoneContactsComponent } from './phone-contacts/phone-contacts.componen
 import { PhoneContactComponent } from './phone-contacts/phone-contact/phone-contact.component';
 import { PhoneContactListComponent } from './phone-contacts/phone-contact-list/phone-contact-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PhoneContactConvertToWordComponent } from './phone-contact-convert-to-word/phone-contact-convert-to-word.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     PhoneContactsComponent,
     PhoneContactComponent,
-    PhoneContactListComponent
+    PhoneContactListComponent,
+    PhoneContactConvertToWordComponent
   ],
   imports: [
     HttpClientModule,

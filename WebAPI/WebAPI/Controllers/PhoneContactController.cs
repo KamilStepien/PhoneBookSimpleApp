@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models.EFModels;
 using WebAPI.Context;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
@@ -13,11 +14,14 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class PhoneContactController : Controller
     {
-        readonly ApplicationDbContext _applicationDbContext;  
+        readonly ApplicationDbContext _applicationDbContext;
+       
 
         public PhoneContactController(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
+            
+
         }
 
         [HttpGet]
@@ -40,6 +44,8 @@ namespace WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<PhoneContact>> PutPhoneContact(int id, PhoneContact newphoneContact)
         {
+
+
             if (id != newphoneContact.ID)
             {
                 return BadRequest();
@@ -79,6 +85,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<PhoneContact>> PostPhoneContact(PhoneContact phoneContact)
         {
+           
             _applicationDbContext.PhoneContacts.Add(phoneContact);
             await _applicationDbContext.SaveChangesAsync();
 
