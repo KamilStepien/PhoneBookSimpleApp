@@ -13,6 +13,7 @@ import { thistle } from 'color-name';
 export class PhoneContactComponent implements OnInit {
 
   phoneContact = new FormGroup({
+    imageSrc: new FormControl(''),
     id:new FormControl(''),
     firstName:new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),

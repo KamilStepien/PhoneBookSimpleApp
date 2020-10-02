@@ -9,7 +9,7 @@ using WebAPI.Context;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200929173632_Initiall")]
+    [Migration("20201002205652_Initiall")]
     partial class Initiall
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace WebAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageSrc")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")

@@ -5,4 +5,5 @@ export class PhoneContactModule {
   firstName:string;
   lastName:string;
   phoneNumber:string;
+  imageSrc:string
  }

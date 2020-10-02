@@ -12,6 +12,7 @@ namespace WebAPI.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageSrc = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<int>(nullable: false)

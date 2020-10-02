@@ -10,6 +10,7 @@ export class PhoneContactService {
   phoneContacts: PhoneContactModule[];
   phoneContact: PhoneContactModule =
   {
+    imageSrc:null,
     id:null,
     firstName:null,
     lastName:null,
@@ -36,6 +37,7 @@ export class PhoneContactService {
 
   editPhoneContact(id:number)
   {
+    console.log(this.phoneContact);
     return this.http.put<PhoneContactModule>("http://localhost:62792/api/phoneContact/" + id,this.phoneContact);
   }
 

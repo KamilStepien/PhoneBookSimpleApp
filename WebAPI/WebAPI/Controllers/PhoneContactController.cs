@@ -62,7 +62,7 @@ namespace WebAPI.Controllers
                 phoneContact.FirstName = newphoneContact.FirstName;
                 phoneContact.LastName = newphoneContact.LastName;
                 phoneContact.PhoneNumber = newphoneContact.PhoneNumber;
-
+                phoneContact.ImageSrc = newphoneContact.ImageSrc;
                 await _applicationDbContext.SaveChangesAsync();
                 return newphoneContact;
             }

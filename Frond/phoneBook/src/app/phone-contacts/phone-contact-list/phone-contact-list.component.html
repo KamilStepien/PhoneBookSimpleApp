@@ -1,17 +1,20 @@
 <table class="table">
     <thead>
+        <th scope="col">Image</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">Phone Number</th>
     </thead>
     <tbody>
-        <tr  scope="row" *ngFor="let phonecontact of service.phoneContacts">
-            <td (click)="getPhoneContact(phonecontact.id)" >{{phonecontact.firstName}}</td>
-            <td (click)="getPhoneContact(phonecontact.id)">{{phonecontact.lastName}}</td>
-            <td (click)="getPhoneContact(phonecontact.id)">{{phonecontact.phoneNumber}}</td>
-            <td><button type="button" (click)="deletePhoneContact(phonecontact.id)"   class="btn btn-danger">Delete</button>
+        <tr   *ngFor="let phonecontact of service.phoneContacts">
+            <td style="width:12%"  (click)="getPhoneContact(phonecontact.id)" > <img  [src]="phonecontact.imageSrc"  class="img-fluid"   /></td>
+            <td  (click)="getPhoneContact(phonecontact.id)" >{{phonecontact.firstName}}</td>
+            <td  (click)="getPhoneContact(phonecontact.id)">{{phonecontact.lastName}}</td>
+            <td  (click)="getPhoneContact(phonecontact.id)">{{phonecontact.phoneNumber}}</td>
+            <td> <button type="button" (click)="deletePhoneContact(phonecontact.id)"   class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
 
 </table>
+<app-phone-contact-convert-to-word></app-phone-contact-convert-to-word>

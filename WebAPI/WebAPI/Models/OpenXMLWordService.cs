@@ -54,7 +54,7 @@ namespace WebAPI.Models
                         Val = new EnumValue<BorderValues>(BorderValues.Single),
                         Size = 12
                     }));
-
+                
                 table.AppendChild<TableProperties>(props);
                 var tr = new TableRow();
                 foreach (var property in typeof(PhoneContact).GetProperties())
@@ -66,7 +66,7 @@ namespace WebAPI.Models
                 }
 
                 table.Append(tr);
-
+                
                 foreach (var elm in phoneContacts)
                 {
 
@@ -99,9 +99,6 @@ namespace WebAPI.Models
                 //Create the document structure and add some text.
                 mainPart.Document = new DocumentFormat.OpenXml.Wordprocessing.Document();
                 Body body = mainPart.Document.AppendChild(new Body());
-                //Paragraph para = body.AppendChild(new Paragraph());
-                //Run run = para.AppendChild(new Run());
-                //run.AppendChild(new Text("Create text in body - CreateWordprocessingDocument"));
             }
 
 
